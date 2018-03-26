@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="CalculatorApp">
+<head>
+	<title>Calculator App</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	<h1>Calculator App</h1>
+
+	<div ng-controller="CalculatorController as ctrl">
+		<input type="text" ng-change="ctrl.calculateResult()" ng-model="ctrl.a">
+		<span>{{ctrl.operation}}</span>
+		<input type="text" ng-change="ctrl.calculateResult()" ng-model="ctrl.b">
+		<span>=</span>
+		<span>{{ctrl.result}}</span>
+		<p>Choose operation: 
+			<button ng-click="ctrl.setOperation('+')">+</button>
+			<button ng-click="ctrl.setOperation('-')">-</button>
+			<button ng-click="ctrl.setOperation('*')">*</button>
+			<button ng-click="ctrl.setOperation('/')">/</button>
+		</p>
+	</div>
+
+</body>
+</html>
